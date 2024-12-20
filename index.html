@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archana Portfolio 2</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        
+        header {
+            background: #35424a;
+            color: #ffffff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        
+        header h1,
+        header h2 {
+            margin: 0.5rem 0;
+        }
+        
+        section {
+            margin: 2rem auto;
+            padding: 1rem;
+            width: 80%;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        section h2 {
+            color: #35424a;
+            border-bottom: 2px solid #35424a;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        pre {
+            background: #f4f4f9;
+            padding: 1rem;
+            border-radius: 4px;
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+            border: 1px solid #ddd;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        
+        table th,
+        table td {
+            border: 1px solid #ddd;
+            padding: 0.75rem;
+            text-align: left;
+        }
+        
+        table th {
+            background-color: #35424a;
+            color: #ffffff;
+        }
+        
+        ul {
+            list-style: disc inside;
+            margin: 1rem 0;
+        }
+        
+        ol {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+        
+        p {
+            margin: 1rem 0;
+        }
+        
+        @media (max-width: 768px) {
+            section {
+                width: 95%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Portfolio 2</h1>
+        <h2>Sandbox Application</h2>
+        <p><strong>Name:</strong> Archana Bindhu</p>
+        <p><strong>Student ID:</strong> A000254426</p>
+    </header>
+
+    <section>
+        <h2>Network Diagram</h2>
+        <ol>
+            <li><strong>Gateway Router:</strong>
+                <pre>
+Router1> enable
+Router1# configure terminal
+Router1(config)# interface fastethernet 0/0
+Router1(config-if)# ip address 192.168.9.1 255.255.255.0
+Router1(config-if)# no shutdown
+Router1(config-if)# exit
+Router1(config)# interface fastethernet 0/1
+Router1(config-if)# ip address 192.168.109.1 255.255.255.0
+Router1(config-if)# no shutdown
+Router(config-if)# exit
+                </pre>
+            </li>
+            <li><strong>Desktop (PC):</strong> Configure static IPs and ping 192.168.9.1</li>
+            <li><strong>Application Server:</strong>
+                <ul>
+                    <li>Set static IP and enable HTTP/HTTPS services.</li>
+                    <li>Access the web server using the browser with the IP address 192.168.109.2</li>
+                </ul>
+            </li>
+        </ol>
+    </section>
+
+    <section>
+        <h2>IP Address Table</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Device</th>
+                    <th>Role</th>
+                    <th>IP Address</th>
+                    <th>Subnet Mask</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Desktop VM (Ubuntu Desktop)</td>
+                    <td>Management</td>
+                    <td>192.168.9.2</td>
+                    <td>255.255.255.0</td>
+                </tr>
+                <tr>
+                    <td>Gateway Router VM (enpOs3)</td>
+                    <td>Internet Access</td>
+                    <td>10.0.2.15</td>
+                    <td>255.255.255.0</td>
+                </tr>
+                <tr>
+                    <td>Gateway Router VM (enpOs8)</td>
+                    <td>Subnet 01 - Internal Network</td>
+                    <td>192.168.9.1</td>
+                    <td>255.255.255.0</td>
+                </tr>
+                <tr>
+                    <td>Gateway Router VM (enpOs9)</td>
+                    <td>Subnet 02 - Internal Network</td>
+                    <td>192.168.109.1</td>
+                    <td>255.255.255.0</td>
+                </tr>
+                <tr>
+                    <td>Application Server VM (Bitnami)</td>
+                    <td>Server</td>
+                    <td>192.168.109.2</td>
+                    <td>255.255.255.0</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h2>Git Pages Lab Report</h2>
+        <p><strong>Github Link:</strong> [Provide link here]</p>
+        <h3>Configuration Steps:</h3>
+        <ul>
+            <li>Create three VM Machines.</li>
+            <li>Download and install VirtualBox.</li>
+            <li>Set up Ubuntu Desktop, Ubuntu Server, and Bitnami Wordpress OS.</li>
+        </ul>
+        <h4>Ubuntu Server OS Configuration:</h4>
+        <ol>
+            <li>Create a new VM with the Ubuntu Server ISO.</li>
+            <li>Configure Network Interfaces with appropriate settings for NAT and internal networks.</li>
+            <li>Install Ubuntu Server and assign static IPs.</li>
+            <li>Enable IP forwarding and configure IPTables for routing.</li>
+        </ol>
+        <h4>Ubuntu Desktop Configuration:</h4>
+        <ol>
+            <li>Install and configure Ubuntu Desktop with static IP settings.</li>
+        </ol>
+        <h4>Bitnami Web Application Configuration:</h4>
+        <ol>
+            <li>Import Bitnami appliance into VirtualBox.</li>
+            <li>Configure Network Interfaces and static IPs.</li>
+        </ol>
+    </section>
+
+    <section>
+        <h2>Functional Test Results</h2>
+        <p>Evidence of communication between all VMs:</p>
+        <ul>
+            <li>Ping results between Ubuntu Server and Desktop.</li>
+            <li>Ping results between Bitnami Application Server and Ubuntu Server.</li>
+        </ul>
+        <p>Include screenshots or video recordings as evidence.</p>
+    </section>
+</body>
+
+</html>
